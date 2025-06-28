@@ -1,0 +1,20 @@
+[12-May-2025 15:28:33 UTC] PHP Warning:  require(../assets/vendor/php-email-form/PHPMailer.php): Failed to open stream: No such file or directory in /home/r3e5swox4kve/public_html/gigo/forms/contact.php on line 5
+[12-May-2025 15:28:33 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '../assets/vendor/php-email-form/PHPMailer.php' (include_path='.:/opt/alt/php83/usr/share/pear:/opt/alt/php83/usr/share/php:/usr/share/pear:/usr/share/php') in /home/r3e5swox4kve/public_html/gigo/forms/contact.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/r3e5swox4kve/public_html/gigo/forms/contact.php on line 5
+[12-May-2025 16:27:25 UTC] PHP Fatal error:  Uncaught Error: Class "PHPMailer\PHPMailer\SMTP" not found in /home/r3e5swox4kve/public_html/gigo/assets/vendor/php-email-form/PHPMailer.php:2049
+Stack trace:
+#0 /home/r3e5swox4kve/public_html/gigo/assets/vendor/php-email-form/PHPMailer.php(2210): PHPMailer\PHPMailer\PHPMailer->getSMTPInstance()
+#1 /home/r3e5swox4kve/public_html/gigo/assets/vendor/php-email-form/PHPMailer.php(2118): PHPMailer\PHPMailer\PHPMailer->smtpConnect()
+#2 /home/r3e5swox4kve/public_html/gigo/assets/vendor/php-email-form/PHPMailer.php(1747): PHPMailer\PHPMailer\PHPMailer->smtpSend()
+#3 /home/r3e5swox4kve/public_html/gigo/assets/vendor/php-email-form/PHPMailer.php(1564): PHPMailer\PHPMailer\PHPMailer->postSend()
+#4 /home/r3e5swox4kve/public_html/gigo/forms/contact.php(45): PHPMailer\PHPMailer\PHPMailer->send()
+#5 {main}
+  thrown in /home/r3e5swox4kve/public_html/gigo/assets/vendor/php-email-form/PHPMailer.php on line 2049
+[12-May-2025 16:32:42 UTC] PHP Warning:  Undefined array key "name" in /home/r3e5swox4kve/public_html/gigo/forms/contact.php on line 31
+[12-May-2025 16:32:42 UTC] PHP Warning:  Undefined array key "email" in /home/r3e5swox4kve/public_html/gigo/forms/contact.php on line 32
+[12-May-2025 16:32:42 UTC] PHP Warning:  Undefined array key "message" in /home/r3e5swox4kve/public_html/gigo/forms/contact.php on line 33
+[12-May-2025 16:32:48 UTC] PHP Warning:  Undefined array key "name" in /home/r3e5swox4kve/public_html/gigo/forms/contact.php on line 31
+[12-May-2025 16:32:48 UTC] PHP Warning:  Undefined array key "email" in /home/r3e5swox4kve/public_html/gigo/forms/contact.php on line 32
+[12-May-2025 16:32:48 UTC] PHP Warning:  Undefined array key "message" in /home/r3e5swox4kve/public_html/gigo/forms/contact.php on line 33
