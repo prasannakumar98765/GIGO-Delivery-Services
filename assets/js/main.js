@@ -328,98 +328,156 @@ var _waEmbed=(i,o)=>{var e,t,d=()=>{var e,t,d=document.createElement("div");d.se
       </div>`,e);e=function(){d()},(t=document.createElement("link")).setAttribute("rel","stylesheet"),t.setAttribute("type","text/css"),t.onload=e,t.setAttribute("href","https://d2mpatx37cqexb.cloudfront.net/delightchat-whatsapp-widget/embeds/embed.min.css"),document.head.appendChild(t)};
 
      // Wait until DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  const loglist = [
-    { title: "Supply Chain", icon: "assets/supplychain.png" },
-    { title: "Inventory Management", icon: "assets/inventory.png" },
-    { title: "Order Fulfillment", icon: "assets/order.png" },
-    { title: "Warehousing", icon: "assets/warehouse.png" },
-  ];
+// document.addEventListener('DOMContentLoaded', () => {
+//   const loglist = [
+//     { title: "Supply Chain", icon: "assets/supplychain.png" },
+//     { title: "Inventory Management", icon: "assets/inventory.png" },
+//     { title: "Order Fulfillment", icon: "assets/order.png" },
+//     { title: "Warehousing", icon: "assets/warehouse.png" },
+//   ];
 
-  const list = [
-    { text: "Fast Delivery", icon: "assets/tick.png" },
-    { text: "Safety", icon: "assets/tick.png" },
-    { text: "Good Packaging", icon: "assets/tick.png" },
-    { text: "Privacy", icon: "assets/tick.png" },
-  ];
+//   const list = [
+//     { text: "Fast Delivery", icon: "assets/tick.png" },
+//     { text: "Safety", icon: "assets/tick.png" },
+//     { text: "Good Packaging", icon: "assets/tick.png" },
+//     { text: "Privacy", icon: "assets/tick.png" },
+//   ];
 
-  // Inject logistics list items
-  const loglistUl = document.getElementById('loglist');
-  loglist.forEach((item, idx) => {
-    const li = document.createElement('li');
-    li.setAttribute('data-aos', 'fade-right');
-    li.setAttribute('data-aos-delay', idx * 100);
-    li.className = 'loglist-item';
+//   // Inject logistics list items
+//   const loglistUl = document.getElementById('loglist');
+//   loglist.forEach((item, idx) => {
+//     const li = document.createElement('li');
+//     li.setAttribute('data-aos', 'fade-right');
+//     li.setAttribute('data-aos-delay', idx * 100);
+//     li.className = 'loglist-item';
 
-    li.innerHTML = `
-      <img src="${item.icon}" alt="${item.title}" />
-      <span>${item.title}</span>
-    `;
-    loglistUl.appendChild(li);
-  });
+//     li.innerHTML = `
+//       <img src="${item.icon}" alt="${item.title}" />
+//       <span>${item.title}</span>
+//     `;
+//     loglistUl.appendChild(li);
+//   });
 
-  // Inject overlay list on right side image
-  const overlayBox = document.querySelector('.overlay-box');
-  list.forEach((item, idx) => {
-    const div = document.createElement('div');
-    div.setAttribute('data-aos', 'fade-up');
-    div.setAttribute('data-aos-delay', idx * 100);
+//   // Inject overlay list on right side image
+//   const overlayBox = document.querySelector('.overlay-box');
+//   list.forEach((item, idx) => {
+//     const div = document.createElement('div');
+//     div.setAttribute('data-aos', 'fade-up');
+//     div.setAttribute('data-aos-delay', idx * 100);
 
-    div.innerHTML = `
-      <img src="${item.icon}" alt="" />
-      <span>${item.text}</span>
-    `;
+//     div.innerHTML = `
+//       <img src="${item.icon}" alt="" />
+//       <span>${item.text}</span>
+//     `;
 
-    overlayBox.appendChild(div);
-  });
+//     overlayBox.appendChild(div);
+//   });
 
+// });
+
+// const items = [
+//   {
+//     title: "Supply Chain",
+//     description: "Sed ut perspiciatis unde is voluptatem accusant",
+//     image: "assets/container.png",
+//     effect: "fade-up"
+//   },
+//   {
+//     title: "Inventory Management",
+//     description: "Sed ut perspiciatis unde is voluptatem accusant",
+//     image: "assets/storage.png",
+//     effect: "zoom-in"
+//   },
+//   {
+//     title: "Order Fulfillment",
+//     description: "Sed ut perspiciatis unde is voluptatem accusant",
+//     image: "assets/container.png",
+//     effect: "flip-left"
+//   },
+//   {
+//     title: "Warehousing",
+//     description: "Sed ut perspiciatis unde is voluptatem accusant",
+//     image: "assets/container.png",
+//     effect: "fade-left"
+//   },
+// ];
+
+// const cardsWrapper = document.querySelector(".cards-wrapper");
+
+// items.forEach((item) => {
+//   const card = document.createElement("div");
+//   card.className = "card";
+//   card.setAttribute("data-aos", item.effect);
+
+//   card.innerHTML = `
+//     <div class="card-content">
+//       <h2>${item.title}</h2>
+//       <p>${item.description}</p>
+//       <ul>
+//         <li><img src="assets/tick.png" alt="tick" width="16" />Fast Delivery & Secure Package</li>
+//         <li><img src="assets/tick.png" alt="tick" width="16" />Safety & Privacy Security</li>
+//       </ul>
+//     </div>
+//     <img src="${item.image}" alt="${item.title}" class="card-image" />
+//   `;
+
+//   cardsWrapper.appendChild(card);
+// });
+
+// JavaScript to add 'visible' class when element is in viewport (once)
+document.addEventListener("DOMContentLoaded", () => {
+  const heading = document.querySelector('.animated-heading');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        heading.classList.add('visible');
+        observer.unobserve(heading); // Animate once, then stop observing
+      }
+    },
+    { threshold: 0.1 }
+  );
+
+  if (heading) {
+    observer.observe(heading);
+  }
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const paragraph = document.querySelector('.animated-paragraph');
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        paragraph.classList.add('visible');
+        observer.unobserve(paragraph);
+      }
+    },
+    { threshold: 0.1 }
+  );
+
+  if (paragraph) {
+    observer.observe(paragraph);
+  }
 });
 
-const items = [
-  {
-    title: "Supply Chain",
-    description: "Sed ut perspiciatis unde is voluptatem accusant",
-    image: "assets/container.png",
-    effect: "fade-up"
-  },
-  {
-    title: "Inventory Management",
-    description: "Sed ut perspiciatis unde is voluptatem accusant",
-    image: "assets/storage.png",
-    effect: "zoom-in"
-  },
-  {
-    title: "Order Fulfillment",
-    description: "Sed ut perspiciatis unde is voluptatem accusant",
-    image: "assets/container.png",
-    effect: "flip-left"
-  },
-  {
-    title: "Warehousing",
-    description: "Sed ut perspiciatis unde is voluptatem accusant",
-    image: "assets/container.png",
-    effect: "fade-left"
-  },
-];
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card");
 
-const cardsWrapper = document.querySelector(".cards-wrapper");
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          const el = entry.target;
+          const index = Array.from(cards).indexOf(el);
+          setTimeout(() => {
+            el.classList.add("animate-visible");
+          }, index * 200);
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-items.forEach((item) => {
-  const card = document.createElement("div");
-  card.className = "card";
-  card.setAttribute("data-aos", item.effect);
-
-  card.innerHTML = `
-    <div class="card-content">
-      <h2>${item.title}</h2>
-      <p>${item.description}</p>
-      <ul>
-        <li><img src="assets/tick.png" alt="tick" width="16" />Fast Delivery & Secure Package</li>
-        <li><img src="assets/tick.png" alt="tick" width="16" />Safety & Privacy Security</li>
-      </ul>
-    </div>
-    <img src="${item.image}" alt="${item.title}" class="card-image" />
-  `;
-
-  cardsWrapper.appendChild(card);
+  cards.forEach(card => observer.observe(card));
 });
