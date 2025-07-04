@@ -6,13 +6,15 @@
 } */
 
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --heading-font: "Raleway",  sans-serif;
-  --nav-font: "Nunito",  sans-serif;
+  --default-font: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Raleway", sans-serif;
+  --nav-font: "Nunito", sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #111111; /* Color for headings, subheadings and title throughout the website */
@@ -23,105 +25,121 @@
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #444444;  /* The default color of the main navmenu links */
+  --nav-color: #444444; /* The default color of the main navmenu links */
   --nav-hover-color: #1bbd36; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
   --nav-dropdown-hover-color: #1bbd36; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
- 
-  body {
-    font-family: Arial, sans-serif;
-    background: #eef2f7;
-    margin: 0; padding: 0;
-    
-  }
-  .services-page {
 
-    width: 100%;
-    /* max-width: 1100px; */
-    /* margin: 50px auto; */
-    /* padding: 0 20px; */
-  }
-  .services-header {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-  .services-header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  .services-header p {
-    font-size: 1.2rem;
-    color: #555;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background: #eef2f7;
+  margin: 0;
+  padding: 0;
+}
+.services-page {
+  width: 100%;
+  /* max-width: 1100px; */
+  /* margin: 50px auto; */
+  /* padding: 0 20px; */
+}
+.services-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.services-header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+.services-header p {
+  font-size: 1.2rem;
+  color: #555;
+}
 
-  .services-grid { 
-    padding-left: 18%;
-    padding-right: 18%;
-    display: grid;
-    /* grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); */
+.services-grid {
+  padding-left: 18%;
+  padding-right: 18%;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); */
 
   grid-template-columns: auto auto auto;
-    gap: 30px;
-  }
-  .service-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    background-size: 200% 200%;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    padding: 40px 30px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.3s ease;
-    cursor: pointer;
-    outline: none;
-  }
-  .service-card:hover,
-  .service-card:focus {
-    transform: scale(1.05);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-    background-position: center 60%;
-  }
-  .service-card .icon {
-    margin-bottom: 25px;
-  }
-  .service-card .icon i {
-    font-size: 48px;
-    color: var(--default-color);
-    transition: color 0.4s ease, text-shadow 0.4s ease;
-  }
-  .service-card:hover .icon i,
-  .service-card:focus .icon i {
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255,255,255,0.7);
-  }
-  .service-card h3 {
-    margin-bottom: 15px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #222;
-  }
-  .service-card p {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.4;
-  }
+  gap: 30px;
+}
+.service-card {
+  align-items: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-size: 200% 200%;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-position 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
+.service-card:hover,
+.service-card:focus {
+  transform: scale(1.05);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  background-position: center 60%;
+}
+.service-card .icon {
+  margin-bottom:  75px;
+  width: auto;
+  text-align: center; /* ✅ Ensures the icon inside is centered */
+}
+.service-card .icon i {
+  font-size: 48px;
+  color: var(--default-color);
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+.service-card:hover .icon i,
+.service-card:focus .icon i {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+.service-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+}
+.service-card p {
+  
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
 
-  /* Colors for different items */
-  .item-cyan { --default-color: #0dcaf0; }
-  .item-orange { --default-color: #fd7e14; }
-  .item-teal { --default-color: #20c997; }
-  .item-red { --default-color: #df1529; }
-  .item-indigo { --default-color: #6610f2; }
-  .item-pink { --default-color: #f3268c; }
+/* Colors for different items */
+.item-cyan {
+  --default-color: #0dcaf0;
+}
+.item-orange {
+  --default-color: #fd7e14;
+}
+.item-teal {
+  --default-color: #20c997;
+}
+.item-red {
+  --default-color: #df1529;
+}
+.item-indigo {
+  --default-color: #6610f2;
+}
+.item-pink {
+  --default-color: #f3268c;
+}
 
-  @media ( max-width:990px) {
-    .services-grid {     
-      padding-left: 8%;
+@media (max-width: 990px) {
+  .services-grid {
+    padding-left: 8%;
     padding-right: 8%;
-      display: flex;
-      flex-direction: column;
-    }
+    display: flex;
+    flex-direction: column;
   }
+}
