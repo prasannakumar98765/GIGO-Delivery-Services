@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Services - Company Bootstrap Template</title>
+  <title>Services - Logistics</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -68,7 +68,7 @@
                 <ul>
                   <li><a href="team_1.html">Board of Executives</a></li>
                     <li><a href="team_3.html">Advisory Board</a></li>
-                  <li><a href="team_2.html">Business Operations</a></li>
+                  <!-- <li><a href="team_2.html">Business Operations</a></li> -->
                   
                 </ul>
               </li>
@@ -299,10 +299,6 @@ Secure storage, fast delivery, and seamless logistics—all in one place.
     </div>
   </div> <!-- .responsive-inner -->
 </div> <!-- .full-width-container -->
-
-    
-
-  </main>
 
     
     
@@ -651,9 +647,31 @@ Secure storage, fast delivery, and seamless logistics—all in one place.
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  
+ <script>
+  // Animate cards
+  const cards = document.querySelectorAll('.card');
+  const cardObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-visible');
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  cards.forEach(card => cardObserver.observe(card));
 
-
+  // Animate headings and paragraphs
+  const animateElements = document.querySelectorAll('.animated-heading, .animated-paragraph');
+  const textObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        textObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  animateElements.forEach(el => textObserver.observe(el));
+</script>
 </body>
 
 </html>

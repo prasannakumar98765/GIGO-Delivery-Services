@@ -1,7 +1,8 @@
 
 /*--------------------------------------------------------------
 # Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
+# Hel
+: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
@@ -63,6 +64,9 @@
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
+   margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
@@ -779,6 +783,29 @@ section,
   margin: auto;
 }
 
+.section-title h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.section-title h1:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+
 .section-title p {
   margin-bottom: 0;
 }
@@ -1015,6 +1042,56 @@ section,
   background: var(--accent-color);
 }
 
+.leading{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  gap: 50px;
+}
+
+.leading-img{
+  padding-left: 50px;
+}
+
+
+.leading-content{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.leading-content h1{
+  font-weight: 700;
+}
+
+.leading-content p{
+  width: 95%;
+}
+
+@media (max-width: 932px){
+.leading{
+  display: flex;
+  flex-direction: column;
+}
+.leading-img{
+  padding-left: 0px;
+}
+.leading-content{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-right: 50px;
+  padding-left: 20px;
+  
+}
+
+}
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -2780,8 +2857,9 @@ section,
   display: flex;
   align-items: center;
   gap: 70px;
-  margin-left: 200px;
+  margin-left: 100px;
   flex-wrap: wrap;
+     
 }
 
 .track img {
@@ -2793,6 +2871,8 @@ section,
 }
 
 .track-content {
+  margin-top: 80px;
+  margin-bottom: 20px;
   display: flex;
   text-align: start;
   flex-direction: column;
@@ -2806,11 +2886,13 @@ section,
     align-items: center;         
     margin-left: 0;              
     padding: 0 10px;            
-    gap: 30px;                 
+    gap: 30px;  
+    margin-top: 30px;               
   }
 
   .track-content {
-    
+    margin-top: 0px;
+  margin-bottom: 0px;
     text-align: center;          
     align-items: center;         
   }
@@ -3615,4 +3697,94 @@ line-height: 30px;
   opacity: 1 !important;
   transform: translate(0,0) scale(1) rotate(0deg) !important;
   transition: opacity 1s ease, transform 1s ease;
+}
+
+@media(min-width:990px){ 
+#starter-section .section-title .delivery-service-p{  
+  margin-bottom: 40px;
+  max-width: 1200px;
+  text-align: center;
+  margin-left: 30px;
+  padding-right: 0px;
+  padding-left: 60px;
+} 
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ 
+
+/* Wrapper */
+.rd-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0px;
+}
+
+@media (min-width: 1024px) {
+  .rd-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px; /* match lg:gap-10 */
+  }
+}
+
+/* Card */
+.rd-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px; /* py-10 */
+}
+
+.rd-circle {
+  background-color: white;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: -40px; /* Instead of translateY(40px) */
+  z-index: 1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.rd-box {
+  background-color: #1e40af;
+  color: #fde68a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 64px; /* keep this for visual spacing */
+  padding-bottom: 40px;
+  padding-left: 56px;
+  padding-right: 56px;
+  gap: 12px;
+  text-align: center;
+  border-radius: 0.375rem;
+  min-width: 250px;
+}
+
+
+/* Heading */
+.rd-box h2 {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600;  /* font-semibold */
+}
+
+/* List */
+.rd-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* gap-2 */
+  list-style-type: disc;
+  padding-left: 1.25rem;
 }
